@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gmail.orinchen.red4s"
+    android:versionCode="4"
+    android:versionName="1.0.1305.1" >
+
+    <uses-sdk
+        android:minSdkVersion="4"
+        android:targetSdkVersion="4" />
+    <!-- Donut-specific flags which allow us to run on any dpi screens. -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:name="com.gmail.orinchen.red4s.app.BcmApplication"
+        android:debuggable="true"
+        android:icon="@drawable/launcher_icon"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.D1" >
+        <activity
+            android:name=".barcode.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+            <intent-filter>
+                <action android:name="com.gmail.orinchen.red4s.barcode.SCAN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".barcode.PreferencesActivity"
+            android:label="@string/preferences_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".app.HomeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".app.SplashActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".app.DynamicListView"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".app.RegistrationActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.gmail.orinchen.red4s.app.MulitSingleTableActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".app.SearchActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".app.MenuLayout"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity android:name=".app.AboutActivity" >
+        </activity>
+        <activity android:name=".app.HistoryList" >
+        </activity>
+        <activity
+            android:name=".app.ShowCodePic"
+            android:theme="@style/mmdialog" >
+        </activity>
+        <activity android:name=".app.HistoryInfo" >
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+
+</manifest>
